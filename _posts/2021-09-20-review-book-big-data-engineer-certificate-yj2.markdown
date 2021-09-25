@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title: "[리뷰] 2022 이기적 빅데이터분석기사 필기 기본서"  
+title: "[리뷰] 2022 이기적 빅데이터분석기사 필기 기본서~!"  
 subtitle: "최신 출제기준 반영 + 동영상 강의 무료 제공 + CBT 온라인 모의고사"  
 categories: review  
 tags: review book 빅데이터분석기사 이기적 2022 필기 수험서 DL ML 통계 분석
