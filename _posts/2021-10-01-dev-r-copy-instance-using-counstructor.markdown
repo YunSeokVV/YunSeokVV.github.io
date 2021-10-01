@@ -8,83 +8,84 @@ comments: true
 ---
 
 ## 개요
-> 자바에서 생성자를 이용해 인스턴스를 복사하는 방법을 알려주는 글입니다!!!!
+> 자바에서 생성자를 이용해 인스턴스를 복사하는 방법을 알려주는 글입니다. 
+> 예제 코드를 통해서 방법을 알아봅시다.
 
 - 목차
-  - [R이란 무엇인가?](#r이란-무엇인가) 
-  - [R설치(Window PC 버전)](#r설치window-pc-버전)
-  - [R Studio설치(Window PC 버전)](#r-studio설치window-pc-버전)
-  - [R Studio 환경설정](#r-studio-환경설정)
+  - 생성자를 이용해서 인스턴스 복사하기
 
-## R이란 무엇인가?
----
-R은 __데이터 분석을 위한 통계 및 그래픽스를 지원하는 오픈소스__로 Python과 더불어 데이터 분석을 위한 도구로 가장 널리 활용되고 있다. Python이 범용 언어로서 개발자가 보다 선호하는 도구임에 비해 R은 IT 비전공자의 경우에도 널리 사용되는 장점이 있다. 머신러닝, 통계는 물론 금융, 그래픽스, 논문작성 등 다양한 분야에 활용되고 있으며 [`CRAN`](http://cran.r-project.org/web/views/)에서 이를 가능하게 하는 다양한 패키지를 제공한다. 더불어 참조할 수 있는 레퍼런스가 다양하고, Eco환경이 훌륭하여 데이터 분석을 위한 최고의 도구임에 손색이 없다고 할 수 있겠다.
+## 생성자를 이용해서 인스턴스 복사하기
+예제 코드
 
-## R설치(Window PC 버전)   
----
-R의 설치는 그 어떤 개발언어의 IDE 설치 과정보다 쉽다.  
+```java
+// 설명을 돕기위해 만든 쿠키 클래스입니다. 
+class Cookie{
+	// 쿠키의 맛을 표현하는 변수입니다.
+	String flavor;
+	// 쿠키의 모양을 표현하는 변수입니다.
+	String shape;
+	// 쿠키의 가격을 표현하는 변수입니다.
+	int cost;
+	
+	// 이 클래스의 생성자 입니다. 
+	Cookie(){
+		// this() 를 사용하면 자기 자신의 생성자를 호출합니다. 세번째로 정의한 생성자가 호출됩니다. 
+		//this() 를 사용하는 이유는 생성자의 초기화 과정을 반복하지 않기 위해서 입니다.
+		this("초코맛","곰돌이 모양",4000);
+	}
+	
+	// 오버로딩을 통해 원하는 형태의 생성자를 만들 수 있습니다. 이 생성자가  인스턴스를 복사하는 역할을 해줍니다.
+	Cookie(Cookie cookie){
+		flavor=cookie.flavor;
+		shape=cookie.shape;
+		cost=cookie.cost;
+	}
 
-1. R 공식사이트에 접속 후, `Download > CRAN`을 클릭 : [`http://www.r-project.org/`](http://www.r-project.org/)  
-  ![그림1](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-1.png)   
-2. Ctrl+F을 눌러 `Korea` 검색 후, 원하는 사이트 아무데나 클릭  
-  ![그림2](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-2.png)
-3. `Download R for Windows` 클릭  
-  ![그림3](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-3.png)
-4. `base` 클릭  
-  ![그림4](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-4.png)
-5. `Download R 3.6.0for Windows` 클릭 (버전은 계속 변경됨)   
-  ![그림5](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-5.png)
-6. 다운로드 완료 후, `R-3.6.0-win.exe`파일을 더블 클릭하여 설치(디폴트로 `Next`만 누르면 설치됨)   
-  ![그림6](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-6.png)
-7. 정상적으로 설치되었는지 확인하기 위해, 아래와 같이 소스코드를 입력  
-```r
-print("welcome")
+	Cookie(String flavor, String shape, int cost) {
+		//this 키워드는 현재 클래스의 인스턴스를 가리킵니다. 현재 클래스의 인스턴스에 있는 속성이나 함수를 제어하기 위해서는 this 예약어를 사용합니다.
+		this.flavor=flavor;
+		this.shape=shape;
+		this.cost=cost;
+	}
+	
+}
+
+public class CookieMain {
+	
+	public static void main(String[] args) {
+
+		// 생성자를 복사하기 위해서 인스턴스인 cookie1 를 생성합니다.
+		Cookie cookie1=new Cookie();
+		
+		// 생성자를 이용해서 cookie1 인스턴스를 복사합니다.
+		Cookie cookie2=new Cookie(cookie1);
+		
+		// 각 인스턴스의 속성값을 로그를 통해 확인합니다.
+		System.out.println("cookie1의 flavor="+cookie1.flavor+", shape="+cookie1.shape+", cost="+cookie1.cost);
+		System.out.println("cookie2의 flavor="+cookie2.flavor+", shape="+cookie2.shape+", cost="+cookie2.cost);
+		
+		// cookie1 인스턴스의 속성값을 변경시켜 봅니다.
+		cookie1.cost=6000;
+		System.out.println("cookie1.cost=6000; 수행 후");
+		System.out.println("cookie1의 flavor="+cookie1.flavor+", shape="+cookie1.shape+", cost="+cookie1.cost);
+		System.out.println("cookie2의 flavor="+cookie2.flavor+", shape="+cookie2.shape+", cost="+cookie2.cost);	
+		
+	}
+
+}
+
 ```
-8. 그림과 같이 입력한 문자열이 그대로 나오면 정상적으로 설치가 완료된 것이다. 
-  ![그림7](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-7.png)
 
 
-## R Studio설치(Window PC 버전)   
----
-R Studio는 R 프로그램을 보다 편리하게 활용하기 위한 IDE(통합개발환경)으로 GUI를 지원하며 프로젝트 관리 및 패키지 설치 관리, 환경 설정을 용이하게 해주므로 개발 생산성 향상을 위해 반드시 설치하는 것이 좋다. 마찬가지로 R만큼 설치과정이 단순하다.  
 
-1. R Studio 공식사이트에 접속 후, `Download RStudio`버튼을 클릭 : [`https://www.rstudio.com/`](https://www.rstudio.com/)  
-  ![그림8](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-8.png)   
-2. Free 버전 `DOWNLOAD` 버튼을 클릭(그 외 버전은 사용제품으로 비용을 지불해야 한다.)  
-  ![그림9](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-9.png)
-3. `RStudio 1.2.1355-Windows 7+ (64bit)` 버튼을 클릭(버전은 계속 변경됨)  
-  ![그림10](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-10.png)
-4. 다운로드 완료 후, `RStudio-1.2.1335.exe`파일을 더블 클릭하여 설치(디폴트로 `Next`만 누르면 설치됨)  
-  ![그림11](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-11.png)
-5. 설치가 완료되면 윈도우 시작버튼을 눌러 하단 검색창에 `rstudio`를 입력 후, 검색된 프로그램을 클릭하여 실행한다.   
-  ![그림18](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-18.png)
-6. 정상적으로 설치되었는지 확인하기 위해, `Console`탭에서 아래와 같이 소스코드를 입력  
-```r
-print("welcome")
+실행 결과
+
 ```
-8. 그림과 같이 입력한 문자열이 그대로 나오면 정상적으로 설치가 완료된 것이다. 
-  ![그림12](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-12.png)
+cookie1의 flavor=초코맛, shape=곰돌이 모양, cost=4000
+cookie2의 flavor=초코맛, shape=곰돌이 모양, cost=4000
+cookie1.cost=6000; 수행 후
+cookie1의 flavor=초코맛, shape=곰돌이 모양, cost=6000
+cookie2의 flavor=초코맛, shape=곰돌이 모양, cost=4000
 
-## R Studio 환경설정   
----
-R Studio을 보다 편리하게 사용하기 위한 몇가지 Tip을 소개한다.
-
-1. 편집기 `인코딩` 방식 변경
-   - 그림과 같이 `Tools> Global Options > Code > Saving > Change버튼 > UTF-8선택` 순서로 클릭)  
-     ![그림13](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-13.png)
-   - 설정을 변경하면 자동으로 R를 껐다 켤것인지 묻는데 `Yes`를 눌러준다.
-     ![그림14](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-14.png)
-
-2. 편집기 코딩 폰트 등 스타일 변경 : `Tools> Global Options > Appearance > 폰트, 사이즈, 테마 등 선택`  
-   ![그림17](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-17.png)
-
-3. 화면 레이아웃 변경 : `Tools> Global Options > Pane Layout > 화면 위치별 원하는 레이아웃 선택`  
-   ![그림16](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-16.png)
-
-4. 자동줄바꿈 기능 해제 : `Tools> Global Options > Code > Editing > Soft-wrap R source files 체크해제`  
-   ![그림15](https://theorydb.github.io/assets/img/dev/r/2019-05-01-dev-r-rinstall-15.png)  
-   ※ 참고로 코드 실행 시 `Ctrl+Enter`키를 누르면 멀티라인 실행이 가능하다.
-
-
-이로써 R을 사용하기 위한 사전작업이 모두 완료되었다. 다음 포스트에는 간단한 R의 사용방법에 대하여 설명하겠다.
+```
 
