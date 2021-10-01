@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Dev
-slug: dev
+title: 각종 개발 개념들
+slug: 각종 개발 개념들 모음
 menu: true
 submenu: true
 order: 3
 description: >
-  주로 Data Science 및 그 외 개발에 관련된 모든 것.  
+  공부하면서 익히게된 개발과 관련된 개념들을 정리 하는 곳.
 ---
