@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "[Goal] 한걸음 한걸음, 데이터 과학자(Data Scientist)가 되는 방법"
+title:  "[자바] 생성자를 이용한 인스턴스 복사하기"
 subtitle:   "The Way to become a data scientist step by step"
 categories: dev
 tags: competition how to become data scientist 데이터 사이언티스트 과학자
 comments: true
 ---
 ## 개요
-> `Data Scientist`가 되기 위한 방법들을 정리한 글입니다.
+> 생성자를 이용해서 인스턴스를 복사하는 방법을 설명하기 위한 글입니다.
 
 - 목차
 	- [데이터 사이언스, 데이터 사이언티스트란?](#데이터-사이언스-데이터-사이언티스트란) 
