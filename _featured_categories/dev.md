@@ -1,6 +1,6 @@
 ---
 layout: list
-title: Dev
+title: 개발 개념들 모음
 slug: dev
 menu: true
 submenu: true

@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Unclassified
+title: 해결한 에러들 모음
 slug: unclassified
 menu: true
 submenu: false
 order: 5
 description: >
-  경제. 취미. 그 외 살면서 필요한 기타 문서.
+  해결했던 에러들 모음.
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Jekyll Blog] 구글 애드센스(Google Adsense) 적용하기"
+title:  "테스트 파일"
 subtitle:   "How to register Google Adsense"
 categories: envops
 tags: envops blog github pages jekyll google adsense 
@@ -10,14 +10,13 @@ comments: true
 
 ## 개요
 > 블로그에 `구글 애드센스(Google Adsense)`를 등록하는 방법에 대해서 알아봅니다.  
-  
+
 - 목차
-	- [구글 애드센스(Google Adsense)란?](#구글-애드센스google-adsense란)
-	- [애드센스 가입](#애드센스-가입)
-	- [애드센스 소스코드 적용](#애드센스-소스코드-적용)  
-	- [승인 후 절차](#승인-후-절차)
-  
-  
+  - [구글 애드센스(Google Adsense)란?](#구글-애드센스google-adsense란)
+  - [애드센스 가입](#애드센스-가입)
+  - [애드센스 소스코드 적용](#애드센스-소스코드-적용)  
+  - [승인 후 절차](#승인-후-절차)
+
 ## 구글 애드센스(Google Adsense)란? 
 ---
 구글 애드센스(Google Adsense)란 구글의 `수익형 광고 플랫폼`으로 웹사이트 및 블로그 등을 운영하는 사람이라면 누구나 애드센스에 가입하여 광고 수익을 구글과 나눌 수 있다. 
