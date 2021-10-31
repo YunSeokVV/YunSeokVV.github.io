@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Startup
-slug: startup
+title: 각종 예제들
+slug: examples
 menu: true
 submenu: false
 order: 4
 description: >
-  스타트업 정보조사 및 예행연습.
+  각종 예제 자료들 모음
 ---

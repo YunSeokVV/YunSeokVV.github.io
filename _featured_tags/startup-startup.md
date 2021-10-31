@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Startup
-slug: startup
-category: startup
+title: 각종 예제들
+slug: examples
+category: examples
 menu: false
 order: 1
 ---
