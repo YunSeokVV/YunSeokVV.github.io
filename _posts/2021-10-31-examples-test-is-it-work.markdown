@@ -3,7 +3,6 @@ layout: post
 title: "안드로이드 커스텀 토글 버튼"  
 subtitle: "안드로이드 커스텀 토글 버튼"  
 categories: examples 
-tags: review book 스타트업 창업 사업 실전 법무 가이드 계약 투자 동업 회사 연구 외주 IPO        
 comments: true  
 ---  
 
@@ -28,7 +27,7 @@ comments: true
 >
 > ## 구현 절차 설명
 >
-> 우선 메인 액티비티의 xml 파일입니다.
+> 우선 메인 액티비티의 xml 파일입니다!!
 >
 > activity_main.xml
 >
