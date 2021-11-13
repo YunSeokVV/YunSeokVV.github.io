@@ -1,7 +1,7 @@
 ---
 layout: list
 title: 자아성찰!!
-slug: 자아성찰!!!
+slug: self_examination
 menu: true
 submenu: false
 order: 1
